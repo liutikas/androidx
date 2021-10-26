@@ -75,6 +75,7 @@ jobs:
       - uses: JetBrains/qodana-action@v3.2.1
         with:
           linter: qodana-jvm-community
+          project-dir: "${{ github.workspace }}/room"
           fail-threshold: 10
 
       - name: "Get changed files in push or pull_request"
