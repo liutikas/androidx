@@ -72,6 +72,11 @@ jobs:
           repository: ${{ needs.setup.outputs.checkout_repo }}
           fetch-depth: 1
 
+      - uses: JetBrains/qodana-action@v3.2.1
+        with:
+          linter: qodana-jvm-community
+          fail-threshold: 10
+
       - name: "Get changed files in push or pull_request"
         id: changed-files
         uses: androidx/changed-files-action@main
